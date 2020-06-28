@@ -30,7 +30,7 @@ function setup(){
 
     box11 = new Box(890,125,30,40);
 
-    polygon= Bodies.circle(50,200,20);
+    polygon= Bodies.rectangle(50,200,50,50);
     World.add(world,polygon);
     slingshot = new SlingShot(this.polygon,{x:200, y:50});
 }
@@ -55,8 +55,11 @@ function draw(){
 
     box11.display();
      
-    
-    
+    line(polygon.vertices[0].x,polygon.vertices[0].y,polygon.vertices[1].x,polygon.vertices[1].y);
+    line(polygon.vertices[1].x,polygon.vertices[1].y,polygon.vertices[2].x,polygon.vertices[2].y);
+    line(polygon.vertices[2].x,polygon.vertices[2].y,polygon.vertices[3].x,polygon.vertices[3].y);
+    line(polygon.vertices[0].x,polygon.vertices[0].y,polygon.vertices[3].x,polygon.vertices[3].y);
+
     slingshot.display();    
 }
 
