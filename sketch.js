@@ -30,7 +30,9 @@ function setup(){
 
     box11 = new Box(890,125,30,40);
 
-    polygon= Bodies.rectangle(50,200,50,50);
+    polygon= Bodies.rectangle(50,200,50,50,{
+        'density':1.0
+    });
     World.add(world,polygon);
     slingshot = new SlingShot(this.polygon,{x:200, y:50});
 }
@@ -73,6 +75,6 @@ function mouseReleased(){
 }
 function keyPressed(){
 	if(keyCode === 32){
-		slingShot.attach();
+		slingshot.attach(this.polygon);
 	}
 }
